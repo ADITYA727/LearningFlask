@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block body %}
+ <!-- Page Header -->
+ {% set imgfilename= post.file_name %}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{ params['app_name']}}</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for post in post %}
+        <div class="post-preview">
+          <a href="/post/{{post.slug}}">{{ post.tag_line }} </a>
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.content[0:143]}}...
+            </h3>
+         
+          <p class="post-meta">Posted by
+            <a href="#">Admin</a>
+            on{{post.date}}</p>
+        </div>
+        {% endfor %}
+        <hr>
+     
+        <!-- Pager -->
+        <div class="clearfix">
+           <a class="btn btn-primary float-left" href="{{prev}}">&larr;previous </a>
+          <a class="btn btn-primary float-right" href="{{next}}">next&rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}
+ 
+

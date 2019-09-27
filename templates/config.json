@@ -1,0 +1,19 @@
+{
+	"params":
+	{
+	"local_server":"True",
+	"local_uri": "mysql+pymysql://root:@localhost/flaskdb",
+	"prod_uri": "mysql+pymysql://root:@localhost/flaskdb",
+	"fb_url": "http://www.facebook.com/flasktutorials",
+	"tw_url": "http://www.twitter.com/flasktutorials",
+	"gh_url": "http://www.github.com/flasktutorials",
+	"app_name": "Flask Tutorials",
+	"gmail-user":"adityashukla727@gmail.com",
+	"gmail-pass":"ADIshu71@",
+	"about_txt":"HI this is your about page",
+	"num_of_post":2,
+	"admin_user":"ADITYA727",
+	"admin_pass":"ADIshu78@",
+	"upload_location":"C:\\Users\\Aditya Shukla\\Desktop\\tech_flask\\flasktutorial\\static\\img\\upload_img"
+      }
+}
