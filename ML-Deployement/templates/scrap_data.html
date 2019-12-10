@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <h2>Scarp Hash Tag data from twitter</h2>
+  <form class="form-inline" action="/scrap_data" method="POST">
+    <label for="email2" class="mb-2 mr-sm-2">Enter Number of tweets:</label>
+    <input type="number" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Enter number" name="number" required="******">
+    <label for="pwd2" class="mb-2 mr-sm-2">Enter Hashtag without #:</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Enter hashtag" name="hashtag" required="*********">   
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+</div>
+<hr/>
+
+<div class="container">
+  
+<div class="row">
+  <div class="col-sm-6">
+    <a href="/mix_all_csv" class="btn btn-success mb-2"> Mix All CSV File</a>
+     <p><strong>Please onece delete if mixfile apperar than press</strong></p>
+  </div>
+  {% for i in csv_mix %}
+  {% if i %}
+   <div class="col-sm-1">
+    <a href="#" class="btn">{{ i }}</a>
+  </div>
+  <div class="col-sm-1">
+    <a href="/mix_csv_read/{{ i }}" target="_blank" class="btn" > Show  </a>
+  </div>
+  <div class="col-sm-1">
+    <a href="/mix_csv_delete/{{ i }}" class="btn"> Delete  </a>
+  </div>
+    <div class="col-sm-1">
+    <a href="/mix_csv_download/{{ i }}" class="btn"> Downlad  </a>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+</div>
+
+<ul>
+  <br/>
+  <br/>
+  {% for i in csv_list %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+         <a href="#"> {{ i }} </a>
+      </div>
+        <div class="col-sm-2">
+      <a href="/csv_read/{{ i }}" class="btn btn-primary mb-2" target="_blank"> Show</a>
+      </div>
+       <div class="col-sm-2">
+        <a href="/csv_delete/{{ i }}" class="btn btn-primary mb-2"> Delete  </a>
+      </div>
+       <div class="col-sm-2">
+         <a href="/csv_download/{{ i }}" class="btn btn-primary mb-2"> Download </a>
+      </div>
+    </div>
+  </div>
+  <hr style="width: 1200px" /> 
+{% endfor %}
+</ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
